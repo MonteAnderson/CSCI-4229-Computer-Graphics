@@ -1,0 +1,67 @@
+Monte Anderson
+CSCI 4229
+Summer 2016
+Final Project
+
+This is my final project, which simulates a penalty kick being taken in soccer. You can select where you want to hit the ball towards by selecting the velocities on the X,Y, and Z axes. You then hit spacebar, and the ball will fly towards where you selected. You can also curve the ball in mid air, by holding down any of the W,A,S, or D keys. 
+
+Key bindings
+  1	     Penalty Position 1
+  2 	     Penalty Position 2
+  3 	     Penalty Position 3
+  4 	     Penalty Position 4
+
+  7 	     Set Weather to Cloudy Noon
+  8 	     Set Weather to Sunny Noon
+  9 	     Set Weather to Clear Dusk
+
+  =          Change Team (up list)
+  -          Change Team (down list)
+
+  q          Increase Kick Power (X axis)
+  e          Decrease Kick Power (X axis)
+  w          Increase Kick Angle (Y axis, upwards)
+  s          Decrease Kick Angle (Y axis, downwards)
+  a          Kick Angle Left (Z axis)
+  d          Kick Angle Right (Z axis)
+  
+  r          Reset ball position and velocities to default. 
+  t          Toggle axes
+
+  SPACEBAR   Kick The Ball (Using current X,Y, and Z Velocities)
+  arrows     Change view angle
+  PgDn/PgUp  Zoom in and out
+  0          Reset view angle
+
+  ESC        Exit
+
+--- Running This Project ---
+
+You should just be able to do "make clean" then "make" in the directory where final.c is located. The additional folder labeled "Textures" contains all the textures used in the 3D models.
+
+
+--- About This  Project ---
+
+Fortunately, I was able to complete all of the things listed in my proposal. I modeled everything in this folder, and used some textures from google images. I modeled everything using Blender, and used Photoshop to create/modify textures before applying them. The soccer balls (both high and low poly versions) are not simple spheres. I simulated the seams by creating an icosphere in Blender, and doing some fancy tricks to create patches, then selecting where the patches meet, and collapsing them into the ball. This gives the ball a very realistic look, as it's not just a texture giving the appearance of the seams, but rather shading and verticies that give it a realistic look. The ball (not the low poly model) is over 45,000 vertices, as I tried to make it extremely realistic. I also had to fix the texture of the ball to render correctly. However, this made the program lag heavily, as calculating the shadows on it was expensive. So, I created a low poly version, where the flatter sides of the ball were less vertices. This reduced the vertices to around 10,000, which was much easier for OpenGL to run on my VM. I also created grass models, but it also was very expensive to do these shadows for the entire field, so I decided to not include them. I created the entire stadium and light posts, and textured them with metal and concrete textures. I also included the team logos for some of the premier league teams, which can be changed. 
+
+The soccer goal was also created in Blender by me, using cylinders and cutting them at an angle to make the corners match up. The netting was simple, but tedious, since I just created regular faces in Blender, and lined them up to where I thought looked best.
+
+The trophy was made in Blender, and modeled after the Premier League trophy. The ribbons on the sides were also rendered in Blender, using cloth physics and rigid bodies, which gives it a realistic drape effect.
+
+The ball has some physics, as the Y-Direction (Up/Down) has simulated gravity, and gives the ball a natural curve as it is shot. The goal posts also cause the ball to bounce back if the ball hits them, and this works on all the goal posts. The netting stops the ball from continuing, even on the sides, but allows the ball to continue if the ball is shot way above the goal or to the sides. 
+
+The Premier League flags also have a simulated wind effect, using Cos and Sin to move the corners. I did it in such a way that makes it seem as if the wind is blowing the flags from behind/in front. 
+
+You can also shoot the ball from different locations by pressing 1-4. This was to add more fun to the project, and not just have one location where you shoot from.
+
+I also rendered and textured a water bottle, which can be seen next to the goal (the blue thing). 
+
+The ball also gives off a reflection from the light source (very visible during the evening scene). I decided to make the ball spin, so you can see these effects, and because it looks cooler when the ball is spinning and curving in the air, rather than just being static.
+
+The seats also give off a reflection from the sun, which is visibe by looking down from high up at the field. However, since metal reflects light well, and concrete does not, I made the texture for the concrete have a low reflection, so that it looks like the metal is actually metal, and reflects off like it should.
+
+You can also change the time of day/weather by pressing 7, 8, and 9, which changes the Skybox and lighting of the entire scene.
+
+Because I was able to acheive all of the goals in my proposal, including physics for the ball and goal posts, different weather/time of day and lighting, and the stadium and ball were complex shapes created in Blender, as well as how highly detailed these complex 3D shapes are (The ball had over 45,000 vertices, using rigid bodies and cloth physics in Blender to get realistic draping for the trophy, and the water bottle also is very nice), the fact that I made different textures have different properties for models (metal and the ball reflect a lot, concrete and goal post do not), I feel as though I deserve an A on this project.
+
+

@@ -1,0 +1,27 @@
+--- Goals Met So Far ---
+* "Physics" for ball work decently, have to fine tune them.
+* Player is able to kick the ball in any direction they want, with whatever velocities they want.
+* Able to tell when ball hits the ground, and stops all velocities.
+* Able to tell when ball hits net (any side), and stops all velocities.
+* Imported objects created in Blender light up with their normals well, and cast shadows well.
+* Ball is not a simple sphere - It has over 40,000 vertices, to simulate the patches and stitching (So you can zoom very close to it and see the detail).
+* Goal and Net have been modeled and look good.
+* Skybox is added for prettiness.
+
+
+
+--- Things to do ---
+* Make ball color/texture change on button press (easy).
+* Make lighting look prettier (less harsh).
+* Fix/fine tune physics of the ball.
+* Fine Tune physics for stopping ball in net and out of net (letting the ball go beyond the net in the X and Z directions).
+* Create 3D model of the stadium.
+* Create 3D model of water bottles? (Might add this for fun)
+* Fix Skybox (only using one texture right now)
+* Add materials to models. They have some in Blender, I just need to port them over.
+
+
+
+--- Things I might not be able to add from proposal ---
+* Particles.
+* Grass blades (in the density I wanted them) made Blender/openGL lag on my VM, so I just won't add them.
